@@ -8,8 +8,7 @@
 <body>
     <div class="container">
         <!-- Mobile -->
-        <div class="app-illustration"> 
-
+        <div class="app-illustration" aria-hidden="true"> 
             <!-- Top of the UI -->
             <header class="chat-header"> 
 
@@ -39,6 +38,89 @@
                     </button>
                 </div>
             </header>
+
+            <div class="chat-main grid-group">
+                <!-- Justify messages to left -->
+                <div class="chat-row">
+                    <div class="chat-bubble--incoming">
+                        Thats sounds great.
+                        I'd be happy with that. 
+                    </div>
+                    <div class="chat-bubble--incoming">
+                        Could you sebd over some pictures
+                        of your dog, please ?
+                    </div>                    
+                </div>
+
+                <!-- Justrify messages to right -->
+                <div class="chat-row--align-right">
+                    <div class="image-bubble"> 
+                        <ul class="image-list" aria-label="a message with 3 pictures">
+                            <li class="image-list__item"><img class="image-list__image" src="images/dog-image-1.jpg" alt="picture"></li>
+                            <li class="image-list__item"><img class="image-list__image" src="images/dog-image-2.jpg" alt="picture"></li>
+                            <li class="image-list__item"><img class="image-list__image" src="images/dog-image-3.jpg" alt="picture"></li>
+                        </ul>
+                    </div>
+
+                    <div class="chat-bubble">
+                        Here are a few pictures. She's a happy girl!
+                    </div>
+
+                    <div class="chat-bubble">
+                        Can you make it?
+                    </div>
+                </div>
+
+                <!-- Justify messages to left --> 
+                <div class="chat-row">
+                    <div class="chat-bubble--incoming">
+                        She looks so happy! The time we 
+                        discussed works. How long shall I take her
+                        out for?
+                    </div>
+
+                    <!-- Payment option -->
+                    <div class="payment-option-bubble">
+                        <div class="payment-option-bubble__right">
+                            <button class="payment-option-bubble__radio-bt full-round"></button>
+                            <span> 30 minutes walk </span>
+                        </div>
+
+                        <span class="payment-option-bubble__price">$29</span>
+                    </div>
+
+                    
+                    <!-- Payment option -->
+                    <div class="payment-option-bubble">
+                        <div class="payment-option-bubble__right">
+                            <button class="payment-option-bubble__radio-btn full-round"></button>
+                            <span> 1 hour walk </span>
+                        </div>
+
+                        <span class="payment-option-bubble__price">$49</span>
+                    </div>
+                </div>
+
+                
+                <!-- UI footer -->
+                <div class="chat-input">
+                    <input class="chat-input__input-field" type="text" name="">
+                    <button class="chat-input__send-btn full-round">
+                        <!-- Icon created with pseudo-element -->
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-description">
+            <strong> Simple booking </strong>
+            <p>
+                Stay in touch with our dog walkers thoiught the chat interface.
+                This makes it east to discuss arrangments and 
+                make bookings. Once the walk has been 
+                compleated you can rate your walker and 
+                book again all through the chat. 
+            </p>
         </div>
     </div>
 </body>
