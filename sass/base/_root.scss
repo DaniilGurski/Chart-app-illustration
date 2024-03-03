@@ -1,0 +1,38 @@
+@use "./abstracts/colors" as *;
+@use "./abstracts/typography" as *;
+
+:root {
+    // colors
+    @each $role, $shades in $colors { 
+        @each $shade, $value in $shades {
+            --clr-#{$role}-#{$shade}: #{$value};
+        }
+    }
+
+    // gradients
+    @each $role, $gradient in $gradients {
+
+        $angle: map-get($gradient, angle);
+        $start: map-get($gradient, start);
+        $end: map-get($gradient, end);
+
+        --gradient-#{$role}: #{'linear-gradient(#{$angle}, #{$start}, #{$end})'}; // preventing error highlighting.
+    }
+
+    // typography (fonts)
+    @each $prefix, $data in $font-data {
+
+        // font families
+        @if $prefix == ff {
+            @each $role, $family in $data {
+                @each $name, $default in $family {
+                    --#{$prefix}-#{$role}: "#{$name}", #{$default};
+                }
+            }
+        } @else {
+            @each $key, $value in $data {
+                --#{$prefix}-#{$key}: #{$value};
+            }
+        }
+    }
+}

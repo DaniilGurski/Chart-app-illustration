@@ -1,0 +1,24 @@
+$colors: (
+    primary: (
+        800: hsl(271, 36%, 24%), // sub-heading at the top of the app UI
+        600: hsl(271, 15%, 43%), // chat on the right
+        500: hsl(276, 55%, 52%), // chat on the left
+        300: hsl(206, 6%, 79%), // paragraph
+        400: hsl(270, 7%, 64%), // placeholder text
+        200: hsl(276, 100%, 81%) // main heading
+    ),
+
+    secondary: (
+        800: hsl(271, 36%, 24%), // submit button background
+        300: hsl(289, 100%, 72%), // radio button outline
+        110: hsl(270, 20%, 96%), // app background
+        100: hsl(0, 0%, 100%)
+    ),
+);
+
+
+$gradients: (
+    primary: (angle: 10deg, start: hsl(293, 100%, 63%), end: hsl(264, 100%, 61%))
+)
+
+
