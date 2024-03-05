@@ -1,2 +1,256 @@
 @use "base";
-@use "abstracts";
+@use "abstracts" as *;
+
+
+body {
+    font-family: var(--ff-primary);
+    background: var(--clr-secondary-110);
+}
+
+
+.bg-primary-gradient {
+    background: var(--gradient-primary);
+}
+
+
+.flex-group {
+    display: flex;
+}
+
+
+.full-rounded {
+    border-radius: 50%;
+}
+
+
+// USED IN: chat-header
+.user-profile {
+    width: 40px;
+}
+
+
+.user-image {
+    border-radius: 50%;
+}
+
+
+.arrow-icon {
+    --_color: var(--color, var(--clr-secondary-100));
+    --_thickness: var(--thickness, 5px);
+    --_direction: var(--direction, 1);
+    --_size: var(--size, 1rem);
+
+    width: var(--_size);
+    height: var(--_size);
+
+    border-right: var(--_thickness) solid var(--_color);
+    border-bottom: var(--_thickness) solid var(--_color);
+
+    transform-origin: center;
+    transform: scale(var(--_direction)) rotate(-45deg);
+
+
+    &--left {
+        @extend .arrow-icon;
+        --direction: -1;
+    }
+}
+
+
+.more-icon {
+    @include button(20px);
+    display: grid;
+    gap: 0.1rem;
+    
+    &__dot {
+        width: 4px;
+        height: 4px;
+        background-color: var(--clr-secondary-200);
+    }
+}
+
+
+/* General styling */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.app-illustration {
+    height: fit-content;
+    width: min(40rem, 90%);
+
+    border: 2rem solid var(--clr-secondary-100);
+    border-radius: 5rem;
+    overflow: hidden;
+    position: relative;
+
+
+    &:before {
+        --_border-radius: 2rem;
+
+        content: ""; 
+        position: absolute;
+        width: 50%;
+        height: 3rem;
+        background-color: var(--clr-secondary-100);
+        border-radius: 0 0 var(--_border-radius) var(--_border-radius);
+
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+.app-description {
+    display: none;
+}
+
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 2rem 2rem 2rem;
+
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    &__chat-header {
+        @include button(20px);
+    }
+
+
+    &__user-profile {
+        width: 50px;
+    }
+
+
+    &__user-image {
+        border: 1px solid var(--clr-secondary-100);
+    }
+}
+
+
+.chat-main {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+
+.chat-user-info {
+    display: grid;
+
+    &__user-name {
+        font: {
+            size: var(--fs-200);
+            weight: var(--fw-medium);
+        }
+
+        
+        color: var(--clr-secondary-100);
+    }
+
+    &__status {
+        color: var(--clr-primary-200);
+    }
+}
+
+
+.chat-row {
+    display: grid;
+    gap: 1rem;
+
+    &--align-right {
+        @extend .chat-row;
+        justify-items: end;
+    }
+}
+
+
+.chat-bubble {
+    @include chat-bubble($background-color: var(--clr-secondary-100), $box-shadow: 0px 2px 10px lighten(#000, 80%));
+
+    &__text {
+        max-width: 15rem;
+    }
+
+    &--incoming {
+        @extend .chat-bubble;
+        box-shadow: none;
+        background: var(--clr-secondary-200);
+        color: var(--clr-primary-500);
+    }
+}
+
+
+.image-bubble {
+    &__image-list {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__image {
+        border-radius: 1rem;
+        width: 85px;
+    }
+}
+
+
+.payment-option-bubble {
+    @include chat-bubble(var(--gradient-primary), var(--clr-secondary-100));
+    display: flex;
+    justify-content: space-between;
+    width: max(20rem, 70%);
+
+
+    &__right {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+
+    &__radio-btn {
+        @include button(20px, 1px solid var(--clr-secondary-100));
+        border-radius: 50%;
+    }
+
+
+    &__price {
+        font: {
+            size: var(--fs-300);
+            weight: var(--fw-bold);
+        }
+    }
+}
+
+
+.chat-input {
+    color: var(--clr-primary-300);
+
+    &__input-field {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        border: none;
+        border-radius: 3rem;
+        background-color: var(--clr-secondary-100);
+        padding: 1rem;
+    }
+
+    &__send-btn {
+        padding: 1.3rem;
+        background-color: var(--clr-secondary-800);
+        border-radius: 50%;
+    }
+}

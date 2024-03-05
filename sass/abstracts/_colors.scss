@@ -11,6 +11,7 @@ $colors: (
     secondary: (
         800: hsl(271, 36%, 24%), // submit button background
         300: hsl(289, 100%, 72%), // radio button outline
+        200: hsl(272, 41%, 93%),
         110: hsl(270, 20%, 96%), // app background
         100: hsl(0, 0%, 100%)
     ),
@@ -18,7 +19,7 @@ $colors: (
 
 
 $gradients: (
-    primary: (angle: 10deg, start: hsl(293, 100%, 63%), end: hsl(264, 100%, 61%))
+    primary: (angle: 200deg, start: hsl(293, 100%, 63%), end: hsl(264, 100%, 61%))
 )
 
 

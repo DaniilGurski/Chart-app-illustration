@@ -1,0 +1,32 @@
+// Gradient things on the background
+@mixin body-background-visuals($color) {
+    --_border-radius: 25rem;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 30rem; 
+    height: 80%; 
+
+    background: $color;
+}
+
+
+@mixin chat-bubble($background-color, $color: #000, $box-shadow: 0) {
+    width: fit-content;
+    padding: 1rem 2rem 1rem 1rem;
+    color: $color;
+    background: $background-color;
+    border-radius: 1.5rem;
+    border-bottom-left-radius: 0.5rem;
+    box-shadow: $box-shadow;
+}
+
+
+@mixin button($size, $border: 0, $padding: 0, $background-color: none) {
+    width: $size; 
+    aspect-ratio: 1;
+
+    background: $background-color;
+    padding: $padding;
+    border: $border;
+}

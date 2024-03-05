@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
     <title>chart app illustration</title>
 </head>
 <body>
@@ -10,31 +12,31 @@
         <!-- Mobile -->
         <div class="app-illustration" aria-hidden="true"> 
             <!-- Top of the UI -->
-            <header class="chat-header"> 
+            <header class="chat-header | bg-primary-gradient"> 
 
                 <div class="chat-header__right">
                     <!-- Arrow left -->
-                    <button class="chat-header__back-btn" aria-label="exit chat">
-                        <!-- Icon created with pseudo-element -->
-                    </button>
-
+                    <div class="chat-header__back-btn | arrow-icon--left">
+                    </div>
 
                     <!-- User profile image / link  -->
                     <a class="user-profile chat-header__user-profile" href="#">
-                        <img src="images/avatar.jpg" alt="user profile image">
+                        <img class="user-image chat-header__user-image"src="images/avatar.jpg" alt="user profile image">
                     </a>
 
                     <div class="chat-user-info">
                         <span class="chat-user-info__user-name">Samuel Green</span>
-                        <span class="chat-user-info__status clr-">Available for work</span>
+                        <span class="chat-user-info__status">Available To Walk</span>
                     </div>
                 </div>
 
 
                 <!-- Menu button -->
                 <div class="chat-header__left">
-                    <button class="chat-header__menu-btn">
-                        <!-- Icon created with pseudo-element -->
+                    <button class="more-icon">
+                        <span class="more-icon__dot"></span>
+                        <span class="more-icon__dot"></span>
+                        <span class="more-icon__dot"></span>
                     </button>
                 </div>
             </header>
@@ -43,48 +45,55 @@
                 <!-- Justify messages to left -->
                 <div class="chat-row">
                     <div class="chat-bubble--incoming">
-                        Thats sounds great.
-                        I'd be happy with that. 
+                        <p class="chat-bubble__text">
+                            Thats sounds great.
+                            I'd be happy with that.
+                        </p>
                     </div>
                     <div class="chat-bubble--incoming">
-                        Could you sebd over some pictures
-                        of your dog, please ?
+                        <p class="chat-bubble__text">
+                            Could you send over some pictures
+                            of your dog, please ?
+                        </p>
                     </div>                    
                 </div>
 
                 <!-- Justrify messages to right -->
                 <div class="chat-row--align-right">
-                    <div class="image-bubble"> 
-                        <ul class="image-list" aria-label="a message with 3 pictures">
-                            <li class="image-list__item"><img class="image-list__image" src="images/dog-image-1.jpg" alt="picture"></li>
-                            <li class="image-list__item"><img class="image-list__image" src="images/dog-image-2.jpg" alt="picture"></li>
-                            <li class="image-list__item"><img class="image-list__image" src="images/dog-image-3.jpg" alt="picture"></li>
+                    
+                    <div class="image-bubble">
+                        <ul class="image-bubble__image-list" aria-label="a message with 3 pictures">
+                            <li class="image-bubble__image"><img class="image-bubble__image" src="images/dog-image-1.jpg" alt="picture"></li>
+                            <li class="image-bubble__image"><img class="image-bubble__image" src="images/dog-image-2.jpg" alt="picture"></li>
+                            <li class="image-bubble__image"><img class="image-bubble__image" src="images/dog-image-3.jpg" alt="picture"></li>
                         </ul>
                     </div>
-
                     <div class="chat-bubble">
-                        Here are a few pictures. She's a happy girl!
+                        <p class="chat-bubble__text">Here are a few pictures. She's a happy girl!</p>
+                    </div>
+                    <div class="chat-bubble">
+                        <p class="chat-bubble__text">Can you make it?</p>
                     </div>
 
-                    <div class="chat-bubble">
-                        Can you make it?
-                    </div>
                 </div>
 
                 <!-- Justify messages to left --> 
                 <div class="chat-row">
-                    <div class="chat-bubble--incoming">
-                        She looks so happy! The time we 
-                        discussed works. How long shall I take her
-                        out for?
+                    <div class="chat-bubble chat-bubble--incoming">
+                        <p class="chat-bubble__text">
+                            She looks so happy! The time we discussed works. How long shall I take her
+                            out for?
+                        </p>
                     </div>
 
                     <!-- Payment option -->
                     <div class="payment-option-bubble">
+                        
                         <div class="payment-option-bubble__right">
-                            <button class="payment-option-bubble__radio-bt full-round"></button>
-                            <span> 30 minutes walk </span>
+                            <button class="payment-option-bubble__radio-btn full-round"></button>
+                            <span> 30 minutes walk</span>
                         </div>
+
 
                         <span class="payment-option-bubble__price">$29</span>
                     </div>
@@ -100,21 +109,21 @@
                         <span class="payment-option-bubble__price">$49</span>
                     </div>
                 </div>
-
-                
                 <!-- UI footer -->
                 <div class="chat-input">
-                    <input class="chat-input__input-field" type="text" name="">
-                    <button class="chat-input__send-btn full-round">
-                        <!-- Icon created with pseudo-element -->
-                    </button>
+                    <div class="chat-input__input-field">
+                        <span> Type a message </span>
+                        <div class="chat-input__send-btn">
+                            <div class="chat-input__arrow-icon | arrow-icon"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="app-description">
-            <strong> Simple booking </strong>
-            <p>
+            <strong class="app-description__strong"> Simple booking </strong>
+            <p class="app-description__text">
                 Stay in touch with our dog walkers thoiught the chat interface.
                 This makes it east to discuss arrangments and 
                 make bookings. Once the walk has been 
