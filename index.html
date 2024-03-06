@@ -11,35 +11,33 @@
     <div class="container">
         <!-- Mobile -->
         <div class="app-illustration" aria-hidden="true"> 
-            <!-- Top of the UI -->
-            <header class="chat-header | bg-primary-gradient"> 
 
-                <div class="chat-header__right">
-                    <!-- Arrow left -->
+            <!-- Top of the UI -->
+            <div class="chat-header bg-primary-gradient"> 
+
+                <div class="chat-header__right flex-group">
+                    <!-- back btn  -->
                     <div class="chat-header__back-btn | arrow-icon--left">
                     </div>
 
-                    <!-- User profile image / link  -->
-                    <a class="user-profile chat-header__user-profile" href="#">
-                        <img class="user-image chat-header__user-image"src="images/avatar.jpg" alt="user profile image">
-                    </a>
+                    <!-- user profile image / link  -->
+                    <img class="user-image chat-header__user-image" src="images/avatar.jpg" alt="user profile image">
 
-                    <div class="chat-user-info">
-                        <span class="chat-user-info__user-name">Samuel Green</span>
-                        <span class="chat-user-info__status">Available To Walk</span>
+                    <!-- name, status -->
+                    <div class="chat-header__user-info">
+                        <span class="chat-header__user-name clr-white fw-bold">Samuel Green</span>
+                        <span class="chat-header__status">Available To Walk</span>
                     </div>
                 </div>
 
-
-                <!-- Menu button -->
-                <div class="chat-header__left">
-                    <button class="more-icon">
-                        <span class="more-icon__dot"></span>
-                        <span class="more-icon__dot"></span>
-                        <span class="more-icon__dot"></span>
-                    </button>
+                <!-- more button -->
+                <div class="more-icon">
+                    <span class="more-icon__dot"></span>
+                    <span class="more-icon__dot"></span>
+                    <span class="more-icon__dot"></span>
                 </div>
-            </header>
+
+            </div>
 
             <div class="chat-main grid-group">
                 <!-- Justify messages to left -->
@@ -62,7 +60,7 @@
                 <div class="chat-row--align-right">
                     
                     <div class="image-bubble">
-                        <ul class="image-bubble__image-list" aria-label="a message with 3 pictures">
+                        <ul class="image-bubble__image-list flex-group"  aria-label="a message with 3 pictures">
                             <li class="image-bubble__image"><img class="image-bubble__image" src="images/dog-image-1.jpg" alt="picture"></li>
                             <li class="image-bubble__image"><img class="image-bubble__image" src="images/dog-image-2.jpg" alt="picture"></li>
                             <li class="image-bubble__image"><img class="image-bubble__image" src="images/dog-image-3.jpg" alt="picture"></li>
@@ -79,7 +77,7 @@
 
                 <!-- Justify messages to left --> 
                 <div class="chat-row">
-                    <div class="chat-bubble chat-bubble--incoming">
+                    <div class="chat-bubble--incoming">
                         <p class="chat-bubble__text">
                             She looks so happy! The time we discussed works. How long shall I take her
                             out for?
@@ -90,10 +88,9 @@
                     <div class="payment-option-bubble">
                         
                         <div class="payment-option-bubble__right">
-                            <button class="payment-option-bubble__radio-btn full-round"></button>
+                            <div class="payment-option-bubble__radio-btn full-rounded"></div>
                             <span> 30 minutes walk</span>
                         </div>
-
 
                         <span class="payment-option-bubble__price">$29</span>
                     </div>
@@ -102,7 +99,7 @@
                     <!-- Payment option -->
                     <div class="payment-option-bubble">
                         <div class="payment-option-bubble__right">
-                            <button class="payment-option-bubble__radio-btn full-round"></button>
+                            <div class="payment-option-bubble__radio-btn full-rounded"></div>
                             <span> 1 hour walk </span>
                         </div>
 
@@ -111,9 +108,9 @@
                 </div>
                 <!-- UI footer -->
                 <div class="chat-input">
-                    <div class="chat-input__input-field">
+                    <div class="chat-input__input-field bg-white">
                         <span> Type a message </span>
-                        <div class="chat-input__send-btn">
+                        <div class="chat-input__send-btn full-rounded">
                             <div class="chat-input__arrow-icon | arrow-icon"></div>
                         </div>
                     </div>
