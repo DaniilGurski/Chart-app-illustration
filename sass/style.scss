@@ -5,6 +5,17 @@
 body {
     font-family: var(--ff-primary);
     background: var(--clr-secondary-110);
+    overflow-x: hidden;
+
+    &::before {
+        @include body-background-visuals($color: var(--gradient-primary));
+    }
+
+    &::after {
+        @include body-background-visuals($color: var(--clr-secondary-200), $border-radius: 25rem 25rem 0 0);
+        right: 0;
+        bottom: 0;
+    }
 }
 
 
@@ -14,18 +25,14 @@ body {
 
 
 .flex-group {
+    --_gap: var(--gap, 1rem);
     display: flex;
+    gap: var(--_gap);
 }
 
 
 .full-rounded {
     border-radius: 50%;
-}
-
-
-// USED IN: chat-header
-.user-profile {
-    width: 40px;
 }
 
 
@@ -36,9 +43,9 @@ body {
 
 .arrow-icon {
     --_color: var(--color, var(--clr-secondary-100));
-    --_thickness: var(--thickness, 5px);
+    --_thickness: var(--thickness, 0.4em);
     --_direction: var(--direction, 1);
-    --_size: var(--size, 1rem);
+    --_size: var(--size, 1em);
 
     width: var(--_size);
     height: var(--_size);
@@ -57,50 +64,23 @@ body {
 }
 
 
-.more-icon {
-    @include button(20px);
-    display: grid;
-    gap: 0.1rem;
-    
-    &__dot {
-        width: 4px;
-        height: 4px;
-        background-color: var(--clr-secondary-200);
-    }
+.clr-white {
+    color: var(--clr-secondary-100);
 }
 
 
-/* General styling */
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.bg-white {
+    background-color: var(--clr-secondary-100);
 }
 
 
-.app-illustration {
-    height: fit-content;
-    width: min(40rem, 90%);
-
-    border: 2rem solid var(--clr-secondary-100);
-    border-radius: 5rem;
-    overflow: hidden;
-    position: relative;
+.fw-medium {
+    font-weight: var(--fw-medium);
+}
 
 
-    &:before {
-        --_border-radius: 2rem;
-
-        content: ""; 
-        position: absolute;
-        width: 50%;
-        height: 3rem;
-        background-color: var(--clr-secondary-100);
-        border-radius: 0 0 var(--_border-radius) var(--_border-radius);
-
-        left: 50%;
-        transform: translateX(-50%);
-    }
+.fw-bold {
+    font-weight: var(--fw-bold);
 }
 
 
@@ -109,148 +89,197 @@ body {
 }
 
 
+.container {
+    display: flex;
+    justify-content: center;
+    width: min(28rem, 90%);
+    margin-inline: auto;
+}
+
+
+.app-illustration {
+    width: min(20rem, 80%);
+    overflow: hidden;
+    border: 8px solid var(--clr-secondary-100);
+    border-radius: 2rem;
+    font-size: 0.6rem;
+
+    position: relative;
+    
+    --app-fs-300: 1.7em;
+    --app-fs-200: 1.4em;
+    --app-fs-100: 1em;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 55%;
+        height: 1.4rem;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        border-radius: 0 0 2em 2em;
+
+        background-color: var(--clr-secondary-100);
+    }
+
+
+}
+
+
 .chat-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5rem 2rem 2rem 2rem;
 
-
+    padding: 3em 2em 1em 2em;
+    // back btn, profile img, status
     &__right {
-        display: flex;
         align-items: center;
-        gap: 1rem;
     }
 
 
-    &__chat-header {
-        @include button(20px);
-    }
-
-
-    &__user-profile {
-        width: 50px;
+    &__back-btn {
+        // variable of arrow-icon class
+        --size: 0.8em;
     }
 
 
     &__user-image {
+        width: 3.5em;
         border: 1px solid var(--clr-secondary-100);
     }
+
+
+    &__user-info {
+        display: grid;
+    }
+
+
+    &__user-name {
+        font-size: var(--app-fs-200);
+    }
+
+
+    &__status {
+       color: var(--clr-primary-200);
+    } 
 }
 
 
 .chat-main {
     display: grid;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    gap: 1.8em;
+    padding: 1.2em;
+    background-color: var(--clr-secondary-110);
 }
 
 
-.chat-user-info {
+.more-icon {
+    @include button(1em);
     display: grid;
+    gap: 0.2rem;
+    
+    &__dot {
+        width: 0.25em;
+        height: 0.25em;
+        background-color: var(--clr-secondary-200);
+    }
+}
 
-    &__user-name {
-        font: {
-            size: var(--fs-200);
-            weight: var(--fw-medium);
-        }
 
-        
-        color: var(--clr-secondary-100);
+.chat-bubble {
+    @include chat-bubble($color: var(--clr-secondary-900), $background-color:var(--clr-secondary-100),$border-radius: 1em 1em 0.3em 1em);
+    
+
+    &__text {
+        max-width: 15em;
     }
 
-    &__status {
-        color: var(--clr-primary-200);
+    &--incoming {
+        @extend .chat-bubble;
+        border-radius: 1em 1em 1em 0.3em;
+        background-color: var(--clr-secondary-200);
+        color: var(--clr-primary-500);
     }
 }
 
 
 .chat-row {
     display: grid;
-    gap: 1rem;
-
+    gap: 1em;
     &--align-right {
         @extend .chat-row;
-        justify-items: end;
-    }
-}
-
-
-.chat-bubble {
-    @include chat-bubble($background-color: var(--clr-secondary-100), $box-shadow: 0px 2px 10px lighten(#000, 80%));
-
-    &__text {
-        max-width: 15rem;
-    }
-
-    &--incoming {
-        @extend .chat-bubble;
-        box-shadow: none;
-        background: var(--clr-secondary-200);
-        color: var(--clr-primary-500);
+        display: flex;
+        flex-direction: column;
+        align-items: end;
     }
 }
 
 
 .image-bubble {
+
     &__image-list {
-        display: flex;
-        gap: 1rem;
+        --gap: 1em;
     }
 
     &__image {
-        border-radius: 1rem;
-        width: 85px;
+        border-radius: 1em;
+        width: 5em;
     }
 }
 
 
 .payment-option-bubble {
-    @include chat-bubble(var(--gradient-primary), var(--clr-secondary-100));
-    display: flex;
-    justify-content: space-between;
-    width: max(20rem, 70%);
+    @include chat-bubble($color: var(--clr-secondary-200), $background-color: var(--gradient-primary), $border-radius: 1em 1em 1em 0.3em);
 
+    width: max(20em, 70%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
 
     &__right {
         display: flex;
-        gap: 1rem;
         align-items: center;
+        gap: 1.2em;
     }
-
 
     &__radio-btn {
-        @include button(20px, 1px solid var(--clr-secondary-100));
-        border-radius: 50%;
+        --size: 1.5em;
+
+        width: var(--size);
+        height: var(--size);
+        border: 1px solid var(--clr-secondary-100)
     }
 
-
     &__price {
-        font: {
-            size: var(--fs-300);
-            weight: var(--fw-bold);
-        }
+        color: var(--clr-secondary-100);
+        font-size: var(--app-fs-300);
+        font-weight: var(--fw-bold);
     }
 }
 
 
-.chat-input {
-    color: var(--clr-primary-300);
 
+.chat-input {
+    color: var(--clr-primary-400);
     &__input-field {
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
 
-        border: none;
-        border-radius: 3rem;
-        background-color: var(--clr-secondary-100);
-        padding: 1rem;
+        padding: 0.8em 1.6em;
+        border-radius: 3em;
     }
 
+
     &__send-btn {
-        padding: 1.3rem;
-        background-color: var(--clr-secondary-800);
-        border-radius: 50%;
+        @include button($size: 3.5em, $background: var(--clr-secondary-800));
+
+        display: grid;
+        place-items: center;
     }
 }
