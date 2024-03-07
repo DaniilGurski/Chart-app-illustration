@@ -2,6 +2,8 @@
 @use "abstracts" as *;
 
 
+$breakpoint-desktop: 70em;
+
 body {
     font-family: var(--ff-primary);
     background: var(--clr-secondary-110);
@@ -9,12 +11,22 @@ body {
 
     &::before {
         @include body-background-visuals($color: var(--gradient-primary));
+        transform: translateX(-50%);
+        @include mq($breakpoint-desktop) {
+            transform: unset;
+        }
+
     }
 
     &::after {
         @include body-background-visuals($color: var(--clr-secondary-200), $border-radius: 25rem 25rem 0 0);
         right: 0;
-        bottom: 0;
+        bottom: -20%;
+        transform: translateX(50%);
+
+        @include mq($breakpoint-desktop) {
+            transform: unset;
+        }
     }
 }
 
@@ -84,21 +96,29 @@ body {
 }
 
 
-.app-description {
-    display: none;
-}
-
 
 .container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+
     width: min(28rem, 90%);
     margin-inline: auto;
+    padding: 2rem 1rem;
+
+    position: relative;
+
+
+    @include mq($breakpoint-desktop) {
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+    }
 }
 
 
 .app-illustration {
-    width: min(20rem, 80%);
+    width: min(20rem, 90%);
     overflow: hidden;
     border: 8px solid var(--clr-secondary-100);
     border-radius: 2rem;
@@ -281,5 +301,22 @@ body {
 
         display: grid;
         place-items: center;
+    }
+}
+
+
+.app-description {
+    display: grid;
+    gap: 1rem;
+
+    text-align: center;
+    color: var(--clr-primary-400);
+    &__strong {
+        font-size: var(--fs-500);
+        color: var(--clr-secondary-800);
+    }
+
+    @include mq($breakpoint-desktop) {
+        text-align: left;
     }
 }
