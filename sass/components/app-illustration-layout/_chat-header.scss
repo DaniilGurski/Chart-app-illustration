@@ -1,0 +1,38 @@
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 3em 2em 1em 2em;
+    // back btn, profile img, status
+    &__right {
+        align-items: center;
+    }
+
+
+    &__back-btn {
+        // variable of arrow-icon class
+        --size: 0.8em;
+    }
+
+
+    &__user-image {
+        width: 3.5em;
+        border: 1px solid var(--clr-secondary-100);
+    }
+
+
+    &__user-info {
+        display: grid;
+    }
+
+
+    &__user-name {
+        font-size: var(--app-fs-200);
+    }
+
+
+    &__status {
+       color: var(--clr-primary-200);
+    } 
+}

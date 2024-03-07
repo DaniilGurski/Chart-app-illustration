@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+.container {
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+
+    width: min(28rem, 90%);
+    margin-inline: auto;
+    padding: 2rem 1rem;
+
+    position: relative;
+
+
+    @include mq($breakpoint-desktop) {
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+    }
+}

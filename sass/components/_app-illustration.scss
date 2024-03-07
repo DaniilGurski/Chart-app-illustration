@@ -1,0 +1,31 @@
+@use "app-illustration-layout";
+@use "app-illustration-comp";
+
+.app-illustration {
+    width: min(20rem, 90%);
+    overflow: hidden;
+    border: 8px solid var(--clr-secondary-100);
+    border-radius: 2rem;
+    font-size: 0.6rem;
+
+    position: relative;
+    
+    --app-fs-300: 1.7em;
+    --app-fs-200: 1.4em;
+    --app-fs-100: 1em;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 55%;
+        height: 1.4rem;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        border-radius: 0 0 2em 2em;
+        
+        background-color: var(--clr-secondary-100);
+    }
+}

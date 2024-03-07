@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+.app-description {
+    display: grid;
+    gap: 1rem;
+
+    text-align: center;
+    color: var(--clr-primary-400);
+    &__strong {
+        font-size: var(--fs-500);
+        color: var(--clr-secondary-800);
+    }
+
+    @include mq($breakpoint-desktop) {
+        text-align: left;
+    }
+}

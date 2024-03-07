@@ -1,0 +1,36 @@
+@use "../../abstracts" as *;
+
+.arrow-icon {
+    --_color: var(--color, var(--clr-secondary-100));
+    --_thickness: var(--thickness, 0.4em);
+    --_direction: var(--direction, 1);
+    --_size: var(--size, 1em);
+
+    width: var(--_size);
+    height: var(--_size);
+
+    border-right: var(--_thickness) solid var(--_color);
+    border-bottom: var(--_thickness) solid var(--_color);
+
+    transform-origin: center;
+    transform: scale(var(--_direction)) rotate(-45deg);
+
+
+    &--left {
+        @extend .arrow-icon;
+        --direction: -1;
+    }
+}
+
+
+.more-icon {
+    @include button(1em);
+    display: grid;
+    gap: 0.2rem;
+    
+    &__dot {
+        width: 0.25em;
+        height: 0.25em;
+        background-color: var(--clr-secondary-200);
+    }
+}

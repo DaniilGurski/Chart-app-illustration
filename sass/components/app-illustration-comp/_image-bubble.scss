@@ -1,0 +1,10 @@
+.image-bubble {
+    &__image-list {
+        --gap: 1em;
+    }
+
+    &__image {
+        border-radius: 1em;
+        width: 5em;
+    }
+}

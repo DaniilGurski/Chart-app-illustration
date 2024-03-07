@@ -1,0 +1,21 @@
+@use "../../abstracts" as *;
+
+.chat-input {
+    color: var(--clr-primary-400);
+    &__input-field {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0.8em 1.6em;
+        border-radius: 3em;
+    }
+
+
+    &__send-btn {
+        @include button($size: 3.5em, $background: var(--clr-secondary-800));
+
+        display: grid;
+        place-items: center;
+    }
+}

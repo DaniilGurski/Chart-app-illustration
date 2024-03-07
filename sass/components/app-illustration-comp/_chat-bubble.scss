@@ -1,0 +1,17 @@
+@use "../../abstracts" as *;
+
+.chat-bubble {
+    @include chat-bubble($color: var(--clr-secondary-900), $background-color:var(--clr-secondary-100),$border-radius: 1em 1em 0.3em 1em);
+    
+
+    &__text {
+        max-width: 15em;
+    }
+
+    &--incoming {
+        @extend .chat-bubble;
+        border-radius: 1em 1em 1em 0.3em;
+        background-color: var(--clr-secondary-200);
+        color: var(--clr-primary-500);
+    }
+}

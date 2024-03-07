@@ -1,0 +1,10 @@
+.chat-row {
+    display: grid;
+    gap: 1em;
+    &--align-right {
+        @extend .chat-row;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+}

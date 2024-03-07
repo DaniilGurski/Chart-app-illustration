@@ -1,0 +1,31 @@
+@use "../../abstracts/" as *;
+
+.payment-option-bubble {
+    @include chat-bubble($color: var(--clr-secondary-200), $background-color: var(--gradient-primary), $border-radius: 1em 1em 1em 0.3em);
+
+    width: max(20em, 70%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 1.2em;
+    }
+
+    &__radio-btn {
+        --size: 1.5em;
+
+        width: var(--size);
+        height: var(--size);
+        border: 1px solid var(--clr-secondary-100)
+    }
+
+    &__price {
+        color: var(--clr-secondary-100);
+        font-size: var(--app-fs-300);
+        font-weight: var(--fw-bold);
+    }
+}
