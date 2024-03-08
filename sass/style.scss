@@ -9,6 +9,7 @@ body {
     background: var(--clr-secondary-110);
     overflow-x: hidden;
 
+
     &::before {
         @include body-background-visuals($color: var(--gradient-primary));
         transform: translateX(-50%);

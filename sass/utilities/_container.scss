@@ -11,6 +11,9 @@
 
     position: relative;
 
+    // prevents app-illustration fade in animation from causing y-scrollbar
+    overflow-y: hidden;
+
 
     @include mq($breakpoint-desktop) {
         align-items: center;
